@@ -11,7 +11,6 @@ import { AppRegistry } from 'react-native';
 import App from './src/containers/App';
 
 AppRegistry.registerComponent('demo', () => App);
-
 /*
  AppRegistry是JS运行所有React Native应用的入口。
  应用的根组件应当通过AppRegistry.registerComponent方法注册自己，
