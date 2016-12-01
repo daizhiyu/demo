@@ -47,7 +47,7 @@ const styleTitle = StyleSheet.create({
         backgroundColor: '#007ddc',
         flexDirection:'row',
         width:Dimensions.get('window').width,
-        height:64,
+        height:54,
 
     },
     textcolor:{
