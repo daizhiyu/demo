@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "blog",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -8,14 +8,20 @@
   },
   "dependencies": {
     "react": "15.4.1",
-    "react-native": "0.38.0"
+    "react-native": "0.38.0",
+    "react-native-drawer-layout": "^1.1.0",
+    "react-native-xtabbar": "^0.2.1",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0"
   },
   "jest": {
     "preset": "react-native"
   },
   "devDependencies": {
     "babel-jest": "17.0.2",
-    "babel-preset-react-native": "1.9.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-preset-react-native": "^1.9.0",
     "jest": "17.0.3",
     "react-test-renderer": "15.4.1"
   }
