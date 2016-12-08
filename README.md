@@ -5,7 +5,6 @@
 >安装依赖
 npm install react-redux --save
 npm install redux-thunk --save
-
 npm install react-native-xtabbar --save
 npm install react-native-drawer-layout --save
 npm i react-native-elements --save
