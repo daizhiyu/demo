@@ -7,7 +7,7 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
 import App from './src/containers/App';
-
+console.disableYellowBox = true;
 AppRegistry.registerComponent('demo', () => App);
 /*
  AppRegistry是JS运行所有React Native应用的入口。

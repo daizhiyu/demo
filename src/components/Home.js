@@ -13,6 +13,7 @@ import DrawerLayout from 'react-native-drawer-layout';
 import SliderBar from './SliderBar';
 import Index from './Index';
 import Gank from './Gank';
+import Elements from './Elements';
 export default class Home extends Component {
     constructor(props){
         super(props)
@@ -29,21 +30,19 @@ export default class Home extends Component {
             <TabBar>
                 <TabBar.Item title='首页'>
                      <View >
-                        <Index/>
+                        <Index />
                     </View>
                 </TabBar.Item>
 
                 <TabBar.Item title='干货'>
-
+  
                     <View >
-                        <Gank/>
+                        <Gank {...this.props}/>
                     </View>
                 </TabBar.Item>
 
-                <TabBar.Item title='发现'>
-                    <View style={styles.text}>
-                        <Text style={{fontSize: 18}}>Find</Text>
-                    </View>
+                <TabBar.Item title='组件一'>
+                <Elements  {...this.props}/>
                </TabBar.Item>
 
                <TabBar.Item title='我'>
@@ -67,3 +66,4 @@ const styles = StyleSheet.create({
     }
 
 })
+

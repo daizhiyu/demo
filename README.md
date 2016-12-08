@@ -8,6 +8,8 @@ npm install redux-thunk --save
 
 npm install react-native-xtabbar --save
 npm install react-native-drawer-layout --save
+npm i react-native-elements --save
+npm i react-native-vector-icons --save && react-native link react-native-vector-icons
 
 
 

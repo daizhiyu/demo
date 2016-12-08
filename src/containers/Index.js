@@ -26,7 +26,7 @@ export default class Blog extends Component {
          component: Blog,
          params: {
          id: this.state.id
-         }
+         }//可以在下个页面拿到这个params
        }
      navigator是一个Navigator的对象,用来跳转页面
      getCurrentRoutes() - 获取当前栈里的路由，也就是push进来，没有pop掉的那些。
@@ -60,7 +60,7 @@ export default class Blog extends Component {
                     //initialRoute ->这个指定了默认的页面，也就是启动app之后会看到界面的第一屏。
                    // 需要填写两个参数: name 跟 component。
                   // （注意这里填什么参数纯粹是自定义的，因为这个参数也是你自己发自己收，自己在renderScene方法中处理。我们这里示例用了两个参数，但其实真正使用的参数只有component）
-                    initialRoute={{ component: Home, title:"This is blog"}}
+                    initialRoute={{ component: Home}}
                     //这个是页面之间跳转时候的动画，具体有哪些？可以看这个目录下，有源代码的: node_modules/react-native/Libraries/CustomComponents/Navigator/NavigatorSceneConfigs.js
                    //允许配置场景动画和手势。将由路线调用，且应该返回一个场景配置对象, PropTypes.func
                     configureScene={(route) => {
