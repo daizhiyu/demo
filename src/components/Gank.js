@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-
+import SleekLoadingIndicator from 'react-native-sleek-loading-indicator';
 import {
     View ,
     ScrollView,
@@ -45,7 +45,7 @@ export default class Index extends Component{
       this.dateArray = (await RequestUtils.getDateArray()).results;  
       requestData=await RequestUtils.getContents(this.dateArray.slice(0, 1));
       imgUrl=(requestData[0].results.福利)[0].url;
-      this.setState({dataSource: ds.cloneWithRows( requestData[0].category)});
+      this.setState({dataSource: ds.cloneWithRows( requestData[0].category),isLoading: false});
      
     } catch (error) {
       console.log('request content  faile: ', error)
@@ -85,8 +85,11 @@ export default class Index extends Component{
     }
 
 
-render () {        
-    return (
+render () {     
+    if (this.state.isLoading) {   
+      return (  <View style={styles.loadingStyle}><SleekLoadingIndicator loading={this.state.loading} /></View>);
+    }else{
+          return (
     <ScrollView style={styles.container}>
     <Title {...pros} ></Title>
    <View><Image style={styles.img} source={{url:imgUrl}}/></View>
@@ -98,6 +101,7 @@ render () {
 
     </ScrollView>
       )
+    }
 }
 
 
@@ -128,6 +132,12 @@ const styles = StyleSheet.create({
       borderColor:'#ececec',
       borderBottomWidth:.7,
   },
+  loadingStyle:{
+     alignItems: 'center',
+      justifyContent: 'center',
+      top:Dimensions.get("window").width/2,
+      height:100
+  }
   
    
 })
