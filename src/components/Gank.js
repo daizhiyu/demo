@@ -52,7 +52,7 @@ export default class Index extends Component{
     }   
    
     }
-    /**在组件传递过程中一点要  {...this.props}把navigation对象传递过去*/
+    /**在组件传递过程中一定要  {...this.props}把navigation对象传递过来 因为这是页面之间跳转必须的  路由对象*/
     _onPressButton(category){
         const {navigator} =self.props;
         InteractionManager.runAfterInteractions(()=>{
