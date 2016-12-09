@@ -10,11 +10,13 @@ ListView,
 import { SocialIcon } from 'react-native-elements';
 import Title from '../../utils/title';
 const titleParam = {
-    left: '1',
-    center: '',
-    right: '',
     leftFlag: '1',
-    rightFlag: '0',
+    leftIcon:{
+        iconType:'entypo',
+        iconName:'chevron-thin-left'
+    },
+    center: '',
+    rightFlag: '',
 };
 const iconType=["facebook", "twitter", "pinterest", "linkedin", "youtube",
                  "vimeo", "tumblr", "instagram", "quora", "foursquare",

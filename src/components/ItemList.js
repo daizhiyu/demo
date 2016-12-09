@@ -11,11 +11,13 @@ import Title from '../utils/title';
 import commonStyles from '../utils/commonStyles';
 import SingList from './SingList';
 const titleParam = {
-    left: '',
+     leftFlag: '1',
+     leftIcon:{
+        iconType:'entypo',
+        iconName:'chevron-thin-left'
+    },
     center: '',
-    right: '',
-    leftFlag: '1',
-    rightFlag: '0',
+    rightFlag: '',
 };
 
  let self;

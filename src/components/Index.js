@@ -10,11 +10,13 @@ import {
 import Title from '../utils/title';
 
 const pros = {
-    left: '',
-    center: '首页',
-    right: '',
     leftFlag: '1',
-    rightFlag: '0',
+     leftIcon:{
+        iconType:'foundation',
+        iconName:'list'
+    },
+    center: '首页',
+    rightFlag: '',
 };
 
 export default class Index extends Component{

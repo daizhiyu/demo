@@ -18,11 +18,9 @@ import baseStyles from '../utils/BaseStyles';
 import ItemList from './ItemList';
 import SingList from './SingList';
 const pros = {
-    left: '',
+    leftFlag: '',
     center: '干货集中营',
-    right: '',
-    leftFlag: '1',
-    rightFlag: '0',
+    rightFlag: '',
 };
 let self;
 let imgUrl;
@@ -45,9 +43,11 @@ export default class Index extends Component{
       this.dateArray = (await RequestUtils.getDateArray()).results;  
       requestData=await RequestUtils.getContents(this.dateArray.slice(0, 1));
       imgUrl=(requestData[0].results.福利)[0].url;
-      this.setState({dataSource: ds.cloneWithRows( requestData[0].category),isLoading: false});
+      self.setState({dataSource: ds.cloneWithRows( requestData[0].category),isLoading: false});
      
     } catch (error) {
+          self.setState({ isLoading: false})
+          alert(error)
       console.log('request content  faile: ', error)
     }   
    
@@ -92,7 +92,7 @@ render () {
           return (
     <ScrollView style={styles.container}>
     <Title {...pros} ></Title>
-   <View><Image style={styles.img} source={{url:imgUrl}}/></View>
+   <View><Image resizeMode="stretch" style={styles.img} source={{url:imgUrl}}/></View>
      <ListView    
             dataSource={this.state.dataSource}
             renderRow={this._renderRow}
@@ -119,7 +119,6 @@ const styles = StyleSheet.create({
     img:{
         width: Dimensions.get("window").width,
         height: 300, 
-       
         alignItems: 'center',
     },
   list:{

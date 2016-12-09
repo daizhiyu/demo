@@ -14,19 +14,20 @@ import ButtonShow from './element/ButtonShow';
 import SocialIconShow from './element/SocialIconShow';
 import IconShow from './element/IconShow';
 import ListsViewShow from './element/ListsViewShow';
+import SideMenuShow from './element/SideMenuShow';
+import SearchBarShow from './element/SearchBarShow';
 const titleParam = {
-    left: '',
+   leftFlag: '',
     center: '饿了么组件',
-    right: '',
-    leftFlag: '1',
-    rightFlag: '0',
+    rightFlag: '',
 };
 
 const list = [
   {
     name: '按钮组件',
     subtitle: 'Element Button',
-    comp: ButtonShow
+    comp: ButtonShow,
+   
   },
   {
     name:'社交图标',
@@ -45,8 +46,15 @@ const list = [
   }
    ,{
     name: '抽屉布局',
-    subtitle: 'Element SideMenu'
-  },{
+    subtitle: 'Element SideMenu',
+    comp:SideMenuShow
+  }
+  ,{
+    name: '搜索按钮',
+    subtitle: 'Element SearchBarShow',
+    comp:SearchBarShow
+  },
+  {
       name:'Cross Platform Tab Bar',
       subtitle: 'Element Tab Bar'
   },{

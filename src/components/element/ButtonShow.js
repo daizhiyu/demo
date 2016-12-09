@@ -9,11 +9,13 @@ import { SocialIcon } from 'react-native-elements'
 import Title from '../../utils/title';
 import baseStyles from '../../utils/BaseStyles';
 const titleParam = {
-    left: '1',
-    center: '',
-    right: '',
     leftFlag: '1',
-    rightFlag: '0',
+    leftIcon:{
+        iconType:'entypo',
+        iconName:'chevron-thin-left'
+    },
+    center: '',
+    rightFlag: '',
 };
 
 export default class ButtonShow extends Component {

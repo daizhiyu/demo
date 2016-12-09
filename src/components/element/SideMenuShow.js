@@ -1,14 +1,13 @@
 import React,{Component} from 'react';
 import {
   ScrollView ,
-  StyleSheet,
-ListView,
-View,
+  ListView,
+  View,
 } from 'react-native';
 
 import { SideMenu, List, ListItem  } from 'react-native-elements'
-import Title from '../utils/title';
-import Home from './Home'
+import Title from '../../utils/title';
+import Home from '../Home'
 const titleParam = {
     leftFlag: '1',
     leftIcon:{
@@ -31,7 +30,7 @@ const list = [
     subtitle: 'Vice Chairman'
   }
 ]
-export default class SliderBar extends Component{
+export default class SideMenuShow extends Component{
     constructor(props){
         super(props);
         this.state = { toggled: false }

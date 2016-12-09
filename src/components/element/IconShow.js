@@ -9,20 +9,20 @@ ListView,
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Title from '../../utils/title';
+import  iconType from './iconType/entypoIconType';
 const titleParam = {
-    left: '1',
-    center: '',
-    right: '',
     leftFlag: '1',
-    rightFlag: '0',
+    leftIcon:{
+        iconType:'entypo',
+        iconName:'chevron-thin-left'
+    },
+    center: '',
+    rightFlag: '1',
+     rightIcon:{
+        iconType:'evilIcons',
+        iconName:'search'
+    },
 };
-const iconType=
-   [  {name:'rowing'},
-      {name:'g-translate',color:'#00aced'},
-      {name:'sc-telegram',color:'#517fa4',type:'evilicon'},
-      {name:'ios-american-football',type:'ionicon',color:'#517fa4'}, 
-      {name:'heartbeat',type:'font-awesome',color:'#f50'},   
-   ];
 
 
 
@@ -37,20 +37,25 @@ export default class IconShow extends Component {
       };
   }
   _renderRow(rowData){
-     return( <Icon  light type={rowData.type}  name={rowData.name} color={rowData.color}/> )
+     return(   
+       <Icon light type={rowData.type} containerStyle={styles.wrapper}  onPress={()=>alert("这是entypoIconType的"+rowData.name) }  name={rowData.name} color={rowData.color}/> 
+       )
    }
+
+     
+  
   render(){
       return(
             <ScrollView >
                <Title {...titleParam} />
-             <View style={[styles.row]}>
+            
                 <ListView 
                 contentContainerStyle={styles.listShow}
-                initialListSize={20}
+                initialListSize={20000}
                 dataSource={this.state.dataSource}
                 renderRow={this._renderRow}
                 />
-            </View>
+          
           </ScrollView >
       )
   }
@@ -60,16 +65,15 @@ export default class IconShow extends Component {
 
 
 const styles = StyleSheet.create({
-row: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
  listShow:{
-    justifyContent:'space-around',
+   justifyContent:'space-around',
     flexDirection:'row',
-    flexWrap:'wrap',
-    width:Dimensions.get('window').width
- }
+    flexWrap:'wrap', 
+ },
+   wrapper: {
+    width: 50,
+    height: 50
+  },
 
 })
 
