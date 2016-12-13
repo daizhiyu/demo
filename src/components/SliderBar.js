@@ -34,7 +34,7 @@ const list = [
 export default class SliderBar extends Component{
     constructor(props){
         super(props);
-        this.state = { toggled: false }
+        this.state = { toggled: true }
     }
 
 toggleSideMenu () {

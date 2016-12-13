@@ -8,7 +8,7 @@ import {
     StyleSheet,
 } from 'react-native';
 import Title from '../utils/title';
-
+import commonStyles from '../utils/commonStyles';
 const pros = {
     leftFlag: '1',
      leftIcon:{
@@ -28,7 +28,7 @@ export default class Index extends Component{
         return (
             <View>
             <Title {...pros} {...this.props}/>
-            <Text>
+            <Text >
        1
     </Text>
         </View>

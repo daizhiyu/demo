@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import {
-  ScrollView ,
   ListView,
   View,
 } from 'react-native';

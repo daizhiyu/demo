@@ -21,4 +21,12 @@ export default commontyles =StyleSheet.create({
       borderColor:'#ececec',
       borderBottomWidth:.7,
   },
+  demoViewCenter:{
+      flexDirection :'row',
+      justifyContent:'center',
+      alignItems:'center',
+      width:Dimensions.get('window').width,
+      height:Dimensions.get('window').height
+  }
+
 });

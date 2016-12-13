@@ -87,7 +87,8 @@ export default class Index extends Component{
 
 render () {     
     if (this.state.isLoading) {   
-      return (  <View style={styles.loadingStyle}><SleekLoadingIndicator loading={this.state.loading} /></View>);
+      return (<ScrollView style={styles.container}><Title {...pros} ></Title><View style={styles.loadingStyle}><SleekLoadingIndicator loading={this.state.loading} /></View></ScrollView>
+   );
     }else{
           return (
     <ScrollView style={styles.container}>
@@ -97,8 +98,6 @@ render () {
             dataSource={this.state.dataSource}
             renderRow={this._renderRow}
        />     
-
-
     </ScrollView>
       )
     }

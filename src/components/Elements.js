@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
     ListView,
     InteractionManager,
+    ScrollView,
 } from 'react-native';
 import Title from '../utils/title';
 import ButtonShow from './element/ButtonShow';
@@ -16,6 +17,12 @@ import IconShow from './element/IconShow';
 import ListsViewShow from './element/ListsViewShow';
 import SideMenuShow from './element/SideMenuShow';
 import SearchBarShow from './element/SearchBarShow';
+import CrossPlatformTabBarShow from './element/CrossPlatformTabBarShow';
+import CheckboxeShow from './element/CheckboxeShow';
+import ButtonGroupShow from './element/ButtonGroupShow';
+import FormShow from './element/FormShow';
+import CardShow from './element/CardShow';
+import PricingComponentShow from './element/PricingComponentShow';
 const titleParam = {
    leftFlag: '',
     center: '饿了么组件',
@@ -51,26 +58,37 @@ const list = [
   }
   ,{
     name: '搜索按钮',
-    subtitle: 'Element SearchBarShow',
+    subtitle: 'Element CrossPlatformTabBarShow',
     comp:SearchBarShow
   },
   {
-      name:'Cross Platform Tab Bar',
-      subtitle: 'Element Tab Bar'
-  },{
+    name:'跨平台Tab Bar',
+    subtitle: 'Element Tab Bar',
+    comp:CrossPlatformTabBarShow
+  },
+  {
+    name:'ButtonGroup',
+    subtitle: 'Element ButtonGroup',
+    comp:ButtonGroupShow
+  },
+  {
       name:'Checkboxes',
-       subtitle: 'Element Checkboxes'
+       subtitle: 'Element Checkboxes',
+       comp:CheckboxeShow
   },
   {
       name:'Forms',
-      subtitle: 'Element Forms'
+      subtitle: 'Element Forms',
+      comp:FormShow
   },
   {
       name:'Card',
-      subtitle: 'Element Card'
+      subtitle: 'Element Card',
+       comp:CardShow
   },
   {
-      name:'Pricing Component'
+      name:'付款单',
+      comp:PricingComponentShow
 
   }
 
@@ -100,7 +118,7 @@ _onPressButton(i){
     render(){
     
         return (
-          <View>
+          <ScrollView>
            <Title {...titleParam} />
           <List >
   {
@@ -116,7 +134,7 @@ _onPressButton(i){
   }
 </List>
 
-          </View>
+          </ScrollView>
     )
     }
 }

@@ -36,21 +36,14 @@ const RequestUtils = {
 
     return await Promise.all(dateArray.map(proc)) // all，同时执行，全部成功才算ok，then里边的参数是每一个promise结果的有序集
 
-    // let contentUrlArray = dateArray.map(DateUtils.convertDate).map((date) => this.API_DAILY + date)
-    // let promises = contentUrlArray.map(
-    //   (url, index) => fetchWithTimeout(10000, url).then(response => response.json())
-    //   .then(responseData => responseData.date = dateArray[index])
-    // )
-    // // net
-    // let responseDatasCopy
-    // await Promise.all(promises).then(responseDatas => {
-    //   responseDatas.forEach(function (element, index) {
-    //     element.date = dateArray[index]
-    //   })
-    //   responseDatasCopy = responseDatas
-    // })
-    // return responseDatasCopy
+   
   }
 }
 
 module.exports = RequestUtils
+
+/*
+
+
+
+*/

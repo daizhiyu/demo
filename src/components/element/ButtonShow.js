@@ -5,9 +5,7 @@ import {
 
 } from 'react-native';
 import { Button } from 'react-native-elements';
-import { SocialIcon } from 'react-native-elements'
 import Title from '../../utils/title';
-import baseStyles from '../../utils/BaseStyles';
 const titleParam = {
     leftFlag: '1',
     leftIcon:{

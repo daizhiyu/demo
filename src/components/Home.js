@@ -8,50 +8,88 @@ import {
     Navigator,
     StyleSheet,
 } from 'react-native';
-import TabBar from 'react-native-xtabbar';
+import { Tabs, Tab, Icon } from 'react-native-elements'
 import DrawerLayout from 'react-native-drawer-layout';
 import SliderBar from './SliderBar';
 import Index from './Index';
 import Gank from './Gank';
 import Elements from './Elements';
+import Title from '../utils/title';
+const titleParam = {
+   leftFlag: '',
+    center: '',
+    rightFlag: '',
+};
 export default class Home extends Component {
     constructor(props){
         super(props)
+        this.state = ({
+             selectedTab:"Index", 
+             title:"首页"
+            });
+        titleParam.center= this.state.title;
     }
 
+     changeTab (selectedTab,titleName) {
+     this.setState({
+         selectedTab:selectedTab,
+         title:titleName
+        })
+  }
+
+
     render(){
+       const  selectedTab  = this.state.selectedTab
         return (
-            <DrawerLayout
-        ref={(ref) => this._drawer = ref}
-        drawerWidth={300}
-        drawerPosition={DrawerLayout.positions.Left}
-        renderNavigationView={()=><SliderBar {...this.props} closeDrawer={this.closeDrawer}/>}>
+           
+           <Tabs>
+                <Tab
+                    tabStyle={selectedTab !== 'Index' &&  [styles.tabSelectedstyle ]}
+                    titleStyle={[styles.titleStyle]}
+                    selectedTitleStyle={[styles.titleSelected]}
+                    selected={selectedTab === 'Index'}
+                    title={'首页'}
+                    renderIcon={() => <Icon name='home'  type="entypo" size={26} />}
+                    renderSelectedIcon={() => <Icon name='home' type="entypo" color={"red"} size={26} />}
+                    onPress={() => this.changeTab('Index','首页')}>
+                    <Index />
+                </Tab>
 
-            <TabBar>
-                <TabBar.Item title='首页'>
-                     <View >
-                        <Index />
-                    </View>
-                </TabBar.Item>
+                <Tab
+                    tabStyle={selectedTab !== 'Gank' &&  [styles.tabSelectedstyle ]}
+                    titleStyle={[styles.titleStyle]}
+                    selectedTitleStyle={[styles.titleSelected]}
+                    selected={selectedTab === 'Gank'}
+                    title={ '干货'}
+                    renderIcon={() => <Icon name='home'  type="entypo" size={26} />}
+                    renderSelectedIcon={() => <Icon name='index' color={"red"} size={26} />}
+                    onPress={() => this.changeTab('Gank','干货')}>
+                    <Gank {...this.props}/>
+                </Tab>
 
-                <TabBar.Item title='干货'>
-  
-                    <View >
-                        <Gank {...this.props}/>
-                    </View>
-                </TabBar.Item>
-
-                <TabBar.Item title='组件一'>
-                <Elements  {...this.props}/>
-               </TabBar.Item>
-
-               <TabBar.Item title='我'>
-                    <View style={styles.text}>
-                        <Text style={{fontSize: 18}}>Me</Text>
-                    </View>
-               </TabBar.Item>
-        </TabBar>
-        </DrawerLayout>
+                <Tab
+                    tabStyle={selectedTab !== 'Elements' &&  [styles.tabSelectedstyle ]}
+                    titleStyle={[styles.titleStyle]}
+                    selectedTitleStyle={[styles.titleSelected]}
+                    selected={selectedTab === 'Elements'}
+                    title={ '组件'}
+                    renderIcon={() => <Icon name='home'  type="entypo" size={26} />}
+                    renderSelectedIcon={() => <Icon name='index' color={"red"} size={26} />}
+                    onPress={() => this.changeTab('Elements','组件')}>
+                    <Elements  {...this.props}/>
+                </Tab>
+                <Tab
+                    tabStyle={selectedTab !== 'Me' &&  [styles.tabSelectedstyle ]}
+                    titleStyle={[styles.titleStyle]}
+                    selectedTitleStyle={[styles.titleSelected]}
+                    selected={selectedTab === 'Me'}
+                    title={ '我'}
+                    renderIcon={() => <Icon name='home'  type="entypo" size={26} />}
+                    renderSelectedIcon={() => <Icon name='index' color={"red"} size={26} />}
+                    onPress={() => this.changeTab('Me','我')}>
+                    <Elements  {...this.props}/>
+            </Tab>
+  </Tabs>
     )
     }
 }
@@ -66,4 +104,3 @@ const styles = StyleSheet.create({
     }
 
 })
-
