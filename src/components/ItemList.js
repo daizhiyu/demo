@@ -47,7 +47,7 @@ export default  class ItemList extends Component{
         
         return (
             <View>
-            <Title {...titleParam} {...this.props}/>
+            <Title {...titleParam} />
             <View style={commonStyles.container}>
            <ListView    
             dataSource={self.state.dataSource}

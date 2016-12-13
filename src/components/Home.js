@@ -20,6 +20,7 @@ const titleParam = {
     center: '',
     rightFlag: '',
 };
+let self;
 export default class Home extends Component {
     constructor(props){
         super(props)
@@ -28,12 +29,14 @@ export default class Home extends Component {
              title:"首页"
             });
         titleParam.center= this.state.title;
+        self=this;
     }
 
      changeTab (selectedTab,titleName) {
+       
      this.setState({
          selectedTab:selectedTab,
-         title:titleName
+       
         })
   }
 
@@ -41,7 +44,7 @@ export default class Home extends Component {
     render(){
        const  selectedTab  = this.state.selectedTab
         return (
-           
+            
            <Tabs>
                 <Tab
                     tabStyle={selectedTab !== 'Index' &&  [styles.tabSelectedstyle ]}
@@ -51,7 +54,7 @@ export default class Home extends Component {
                     title={'首页'}
                     renderIcon={() => <Icon name='home'  type="entypo" size={26} />}
                     renderSelectedIcon={() => <Icon name='home' type="entypo" color={"red"} size={26} />}
-                    onPress={() => this.changeTab('Index','首页')}>
+                    onPress={() => this.changeTab('Index')}>
                     <Index />
                 </Tab>
 
@@ -63,7 +66,7 @@ export default class Home extends Component {
                     title={ '干货'}
                     renderIcon={() => <Icon name='mood'  size={26} />}
                     renderSelectedIcon={() => <Icon name='mood' color={"red"} size={26} />}
-                    onPress={() => this.changeTab('Gank','干货')}>
+                    onPress={() => this.changeTab('Gank')}>
                     <Gank {...this.props}/>
                 </Tab>
 
@@ -75,7 +78,7 @@ export default class Home extends Component {
                     title={ '组件'}
                     renderIcon={() => <Icon name='menu' size={26} />}
                     renderSelectedIcon={() => <Icon name='menu' color={"red"} size={26} />}
-                    onPress={() => this.changeTab('Elements','组件')}>
+                    onPress={() => this.changeTab('Elements')}>
                     <Elements  {...this.props}/>
                 </Tab>
                 <Tab
@@ -86,7 +89,7 @@ export default class Home extends Component {
                     title={ '我'}
                     renderIcon={() => <Icon name='person'   size={26} />}
                     renderSelectedIcon={() => <Icon name='person' color={"red"} size={26} />}
-                    onPress={() => this.changeTab('Me','我')}>
+                    onPress={() => this.changeTab('Me')}>
                     <Elements  {...this.props}/>
             </Tab>
   </Tabs>

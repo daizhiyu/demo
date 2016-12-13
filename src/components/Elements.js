@@ -23,6 +23,7 @@ import ButtonGroupShow from './element/ButtonGroupShow';
 import FormShow from './element/FormShow';
 import CardShow from './element/CardShow';
 import PricingComponentShow from './element/PricingComponentShow';
+import SwipeListViewShow from './element/SwipeListViewShow';
 const titleParam = {
    leftFlag: '',
     center: '饿了么组件',
@@ -89,8 +90,12 @@ const list = [
   {
       name:'付款单',
       comp:PricingComponentShow
-
+  },
+  {
+      name:'SwipeList',
+      comp:SwipeListViewShow
   }
+
 
 ]
 

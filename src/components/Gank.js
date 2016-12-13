@@ -110,7 +110,8 @@ render () {
 const styles = StyleSheet.create({
       container: {
         flexDirection :'column',
-        width: Dimensions.get("window").width,  
+        width: Dimensions.get("window").width, 
+         height: Dimensions.get("window").height,  
     },
     flex1:{
       flex:1

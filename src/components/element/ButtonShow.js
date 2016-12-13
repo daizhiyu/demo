@@ -134,5 +134,5 @@ onShowUnderlay function 同上面相反，显示时，立即调用
 style 风格样式的使用同View的一样，这里就省略了，不知道的去看View的style
 underlayColor 当视图被触摸或者点击时，显示的颜色
 
-具体的 可以看看按钮的圆代码 node_modules/react-native-elements/src/buttons;
+具体的 可以看看按钮的源代码 node_modules/react-native-elements/src/buttons;
  */ 
