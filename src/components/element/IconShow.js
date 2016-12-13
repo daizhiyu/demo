@@ -9,7 +9,7 @@ ListView,
 } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Title from '../../utils/title';
-import  iconType from './iconType/entypoIconType';
+import  iconType from './iconType/materialIconsIconType';
 const titleParam = {
     leftFlag: '1',
     leftIcon:{
@@ -80,4 +80,6 @@ const styles = StyleSheet.create({
 /**
 ListView的 contentContainerStyle 里设置的是每一个列表显示方式，
  flexWrap:wrap flex容器为多行。该情况下flex子项溢出的部分会被放置到新行，子项内部会发生断行
+materialIconsIconType  可以不用写type
+
  */ 

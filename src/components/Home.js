@@ -61,8 +61,8 @@ export default class Home extends Component {
                     selectedTitleStyle={[styles.titleSelected]}
                     selected={selectedTab === 'Gank'}
                     title={ '干货'}
-                    renderIcon={() => <Icon name='home'  type="entypo" size={26} />}
-                    renderSelectedIcon={() => <Icon name='index' color={"red"} size={26} />}
+                    renderIcon={() => <Icon name='mood'  size={26} />}
+                    renderSelectedIcon={() => <Icon name='mood' color={"red"} size={26} />}
                     onPress={() => this.changeTab('Gank','干货')}>
                     <Gank {...this.props}/>
                 </Tab>
@@ -73,8 +73,8 @@ export default class Home extends Component {
                     selectedTitleStyle={[styles.titleSelected]}
                     selected={selectedTab === 'Elements'}
                     title={ '组件'}
-                    renderIcon={() => <Icon name='home'  type="entypo" size={26} />}
-                    renderSelectedIcon={() => <Icon name='index' color={"red"} size={26} />}
+                    renderIcon={() => <Icon name='menu' size={26} />}
+                    renderSelectedIcon={() => <Icon name='menu' color={"red"} size={26} />}
                     onPress={() => this.changeTab('Elements','组件')}>
                     <Elements  {...this.props}/>
                 </Tab>
@@ -84,8 +84,8 @@ export default class Home extends Component {
                     selectedTitleStyle={[styles.titleSelected]}
                     selected={selectedTab === 'Me'}
                     title={ '我'}
-                    renderIcon={() => <Icon name='home'  type="entypo" size={26} />}
-                    renderSelectedIcon={() => <Icon name='index' color={"red"} size={26} />}
+                    renderIcon={() => <Icon name='person'   size={26} />}
+                    renderSelectedIcon={() => <Icon name='person' color={"red"} size={26} />}
                     onPress={() => this.changeTab('Me','我')}>
                     <Elements  {...this.props}/>
             </Tab>
@@ -101,6 +101,9 @@ const styles = StyleSheet.create({
         marginTop: 64,
         paddingLeft:10,
         paddingRight: 10,
+    },
+    titleSelected:{
+        color:'red'
     }
 
 })
