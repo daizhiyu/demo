@@ -11,6 +11,8 @@ export default class Home extends Component {
     this.renderScene = this.renderScene.bind(this)
   }
   renderScene (route, navigator) {
+    route.title="首页";
+    route.iconName="menu";
     const { toggleSideMenu } = this.props
     return (
       <route.component toggleSideMenu={toggleSideMenu} navigator={navigator} {...route.passProps} />

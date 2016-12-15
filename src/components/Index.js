@@ -69,7 +69,7 @@ export default class Index extends Component {
                     renderIcon={() => <Icon name='mood'  size={26} />}
                     renderSelectedIcon={() => <Icon name='mood' color={"red"} size={26} />}
                     onPress={() => this.changeTab('Gank')}>
-                    <Gank {...this.props}/>
+                    <Gank toggleSideMenu={toggleSideMenu} />
                 </Tab>
 
                 <Tab

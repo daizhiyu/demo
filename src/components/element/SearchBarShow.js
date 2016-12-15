@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {
 View,
 Text,
+Dimensions
 } from 'react-native';
 import { SearchBar} from 'react-native-elements';
 import Title from '../../utils/title';
@@ -33,7 +34,7 @@ export default class SearchBarShow extends Component{
 
 render(){
       return(
-        <View style={{backgroundColor: 'white'}}>
+        <View style={{backgroundColor: 'white',height:Dimensions.get('window').height}}>
          <Title {...titleParam} />
             <SearchBar
                ref={"searchBar1"}

@@ -42,7 +42,7 @@ changeTextSecond(text){
     render(){
 
        return(
-           <View style={{backgroundColor: 'white'}}><Title {...titleParam} />
+           <View style={{backgroundColor: 'white',height:Dimensions.get('window').height}}><Title {...titleParam} />
                 <FormLabel>Phone</FormLabel>
                 <FormInput 
                 autoFocus={true}

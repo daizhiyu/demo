@@ -13,9 +13,7 @@ let styles = {}
 const NavigationBar = (toggleSideMenu) => {
   const src = require('image!logo')
   const LeftButton = (route, navigator, index, navState) => {
-    if (route.name !== 'home') {
-      return null
-    }
+    
     if (index > 0) {
       const leftAction = navigator.pop
       const leftIcon = 'chevron-left'

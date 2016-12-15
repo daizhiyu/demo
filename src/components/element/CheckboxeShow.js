@@ -34,7 +34,7 @@ export default class CheckboxeShow extends Component {
 
     render(){
        return(
-           <View style={{backgroundColor: 'white'}}><Title {...titleParam} />
+           <View style={{backgroundColor: 'white',height:Dimensions.get('window').height}}><Title {...titleParam} />
                 <CheckBox
                     title='Click Here'
                     checked={this.state.checked}

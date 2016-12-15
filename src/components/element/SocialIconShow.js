@@ -41,7 +41,7 @@ export default class SocialIconShow extends Component {
    }
   render(){
       return(
-            <ScrollView style={{backgroundColor: 'white'}}>
+            <ScrollView style={{backgroundColor: 'white',height:Dimensions.get('window').height}}>
                <Title {...titleParam} />
              <View style={[styles.row]}>
                 <ListView 

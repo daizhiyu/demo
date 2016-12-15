@@ -1,27 +1,26 @@
 import React, { Component } from 'react'
-import { Navigator } from 'react-native'
+import { View,Dimensions } from 'react-native'
 import GankComp from '../components/Gank'
 import navigationBar from 'HSNavBar'
-
+import Title from '../utils/title'
 const initialRoute = {component: GankComp, name: 'gank'}
-
+const titleParam = {
+      center: '干货集中营'
+};
 export default class Gank extends Component {
   constructor () {
     super()
-    this.renderScene = this.renderScene.bind(this)
-  }
-  renderScene (route, navigator) {
    
-    return (
-      <route.component  navigator={navigator} />
-    )
   }
+  
+
   render () {
-   
+ 
     return (
-      <Navigator  
-        initialRoute={initialRoute}
-        renderScene={this.renderScene.bind(this)} />
+      <View style={ {backgroundColor:'white',height:Dimensions.get('window').height}}>
+      <Title {...titleParam} />
+     <GankComp {...this.props}/>
+     </View>
     )
   }
 }
