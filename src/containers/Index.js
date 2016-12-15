@@ -8,8 +8,8 @@ import {
     Text,
     Navigator,
 } from 'react-native';
-import Home from '../components/Home';
-
+import Index from '../components/Index';
+let self;
 //组件声明前面的export default关键字。它的意思是导出(export)当前组件(Blog)，以允许其他组件引入(import)和使用当前组件(Blog)
 export default class Blog extends Component {
     // Blog 子类继承 Component 父类,子类必须在constructor方法中调用super方法，
@@ -18,6 +18,7 @@ export default class Blog extends Component {
     //constructor在这里表示父类(Component)的构造函数，用来新建父类(Component)的this对象。
     constructor(props) {
         super(props);
+       self=this;
     }
     //route里其实就是我们传递的组件名和component这两个货,
     /*  这里的route 就是这个
@@ -45,22 +46,24 @@ export default class Blog extends Component {
      */
 
     renderScene (route, navigator) {
+        const { toggleSideMenu } = self.props;
         let Component = route.component;
         //如果传递进来的component存在，那我们就是返回一个这个component，结合上下文 initialRoute 的参数，我们就是知道，这是一个会被render出来给用户看到的component，然后navigator作为props传递给了这个component。
        // 所以我们在Home 组件中 可以通过 props.navigator 拿到 navigator;
         if(route.component) {
               // ...route.params ===> id: this.state.id
-            return <Component {...this.props} {...route.params} navigator={navigator} />
+            return <Component {...this.props} {...route.params} toggleSideMenu={toggleSideMenu}  navigator={navigator} />
         }
     }
     render() {
+         
         return (
                 <Navigator
                     renderScene={this.renderScene}
                     //initialRoute ->这个指定了默认的页面，也就是启动app之后会看到界面的第一屏。
                    // 需要填写两个参数: name 跟 component。
                   // （注意这里填什么参数纯粹是自定义的，因为这个参数也是你自己发自己收，自己在renderScene方法中处理。我们这里示例用了两个参数，但其实真正使用的参数只有component）
-                    initialRoute={{ component: Home}}
+                    initialRoute={{ component: Index}}
                     //这个是页面之间跳转时候的动画，具体有哪些？可以看这个目录下，有源代码的: node_modules/react-native/Libraries/CustomComponents/Navigator/NavigatorSceneConfigs.js
                    //允许配置场景动画和手势。将由路线调用，且应该返回一个场景配置对象, PropTypes.func
                     configureScene={(route) => {

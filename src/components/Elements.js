@@ -123,7 +123,7 @@ _onPressButton(i){
     render(){
     
         return (
-          <ScrollView>
+          <ScrollView style={{backgroundColor: 'white'}}>
            <Title {...titleParam} />
           <List >
   {

@@ -1,112 +1,64 @@
-/**
- * Created by daizhiyu on 2016/11/26.
- */
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { ScrollView, View, StyleSheet, Platform } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
 import {
-    View ,
-    Text,
-    Navigator,
-    StyleSheet,
-} from 'react-native';
-import { Tabs, Tab, Icon } from 'react-native-elements'
-import DrawerLayout from 'react-native-drawer-layout';
-import SliderBar from './SliderBar';
-import Index from './Index';
-import Gank from './Gank';
-import Elements from './Elements';
-import Title from '../utils/title';
-const titleParam = {
-   leftFlag: '',
-    center: '',
-    rightFlag: '',
-};
-let self;
-export default class Home extends Component {
-    constructor(props){
-        super(props)
-        this.state = ({
-             selectedTab:"Index", 
-             title:"首页"
-            });
-        titleParam.center= this.state.title;
-        self=this;
-    }
+  Text,
+  Button
+} from 'react-native-elements'
 
-     changeTab (selectedTab,titleName) {
-       
-     this.setState({
-         selectedTab:selectedTab,
-       
-        })
-  }
+let styles = {}
 
-
-    render(){
-       const  selectedTab  = this.state.selectedTab
-        return (
-            
-           <Tabs>
-                <Tab
-                    tabStyle={selectedTab !== 'Index' &&  [styles.tabSelectedstyle ]}
-                    titleStyle={[styles.titleStyle]}
-                    selectedTitleStyle={[styles.titleSelected]}
-                    selected={selectedTab === 'Index'}
-                    title={'首页'}
-                    renderIcon={() => <Icon name='home'  type="entypo" size={26} />}
-                    renderSelectedIcon={() => <Icon name='home' type="entypo" color={"red"} size={26} />}
-                    onPress={() => this.changeTab('Index')}>
-                    <Index />
-                </Tab>
-
-                <Tab
-                    tabStyle={selectedTab !== 'Gank' &&  [styles.tabSelectedstyle ]}
-                    titleStyle={[styles.titleStyle]}
-                    selectedTitleStyle={[styles.titleSelected]}
-                    selected={selectedTab === 'Gank'}
-                    title={ '干货'}
-                    renderIcon={() => <Icon name='mood'  size={26} />}
-                    renderSelectedIcon={() => <Icon name='mood' color={"red"} size={26} />}
-                    onPress={() => this.changeTab('Gank')}>
-                    <Gank {...this.props}/>
-                </Tab>
-
-                <Tab
-                    tabStyle={selectedTab !== 'Elements' &&  [styles.tabSelectedstyle ]}
-                    titleStyle={[styles.titleStyle]}
-                    selectedTitleStyle={[styles.titleSelected]}
-                    selected={selectedTab === 'Elements'}
-                    title={ '组件'}
-                    renderIcon={() => <Icon name='menu' size={26} />}
-                    renderSelectedIcon={() => <Icon name='menu' color={"red"} size={26} />}
-                    onPress={() => this.changeTab('Elements')}>
-                    <Elements  {...this.props}/>
-                </Tab>
-                <Tab
-                    tabStyle={selectedTab !== 'Me' &&  [styles.tabSelectedstyle ]}
-                    titleStyle={[styles.titleStyle]}
-                    selectedTitleStyle={[styles.titleSelected]}
-                    selected={selectedTab === 'Me'}
-                    title={ '我'}
-                    renderIcon={() => <Icon name='person'   size={26} />}
-                    renderSelectedIcon={() => <Icon name='person' color={"red"} size={26} />}
-                    onPress={() => this.changeTab('Me')}>
-                    <Elements  {...this.props}/>
-            </Tab>
-  </Tabs>
-    )
-    }
+const log = () => {
+  console.log('hello!')
 }
 
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        backgroundColor: '#fff',
-        marginTop: 64,
-        paddingLeft:10,
-        paddingRight: 10,
-    },
-    titleSelected:{
-        color:'red'
+export default class Home extends Component {
+  constructor (props) {
+        super(props);
+       
     }
+  render () {
+     const { toggleSideMenu } = this.props
+    return (
+      <ScrollView style={{backgroundColor: 'white'}}>
+       
+      </ScrollView>
+    )
+  }
+}
 
+styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 15
+  },
+  heading: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 22
+  },
+  hero: {
+    marginTop: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 40,
+    
+  },
+  titleContainer: {
+  },
+  button: {
+    marginTop: 15
+  },
+  title: {
+    textAlign: 'center',
+  
+    ...Platform.select({
+      ios: {
+       
+      }
+    })
+  }
 })
+
+

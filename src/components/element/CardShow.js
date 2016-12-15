@@ -39,7 +39,7 @@ export default class CardShow extends Component {
     render(){
        
        return(
-           <View><Title {...titleParam} /><Card containerStyle={{padding: 0}} >
+           <View style={{backgroundColor: 'white'}}><Title {...titleParam} /><Card containerStyle={{padding: 0}} >
   {
     users.map((u, i) => {
       return (

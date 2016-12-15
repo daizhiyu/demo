@@ -17,11 +17,7 @@ import RequestUtils from '../utils/RequestUtils';
 import baseStyles from '../utils/BaseStyles';
 import ItemList from './ItemList';
 import SingList from './SingList';
-const pros = {
-    leftFlag: '',
-    center: '干货集中营',
-    rightFlag: '',
-};
+
 let self;
 let imgUrl;
 let requestData;
@@ -87,12 +83,12 @@ export default class Index extends Component{
 
 render () {     
     if (this.state.isLoading) {   
-      return (<ScrollView style={styles.container}><Title {...pros} ></Title><View style={styles.loadingStyle}><SleekLoadingIndicator loading={this.state.loading} /></View></ScrollView>
+      return (<ScrollView style={styles.container}><View style={styles.loadingStyle}><SleekLoadingIndicator loading={this.state.loading} /></View></ScrollView>
    );
     }else{
           return (
     <ScrollView style={styles.container}>
-    <Title {...pros} ></Title>
+  
    <View><Image resizeMode="stretch" style={styles.img} source={{url:imgUrl}}/></View>
      <ListView    
             dataSource={this.state.dataSource}
@@ -109,9 +105,7 @@ render () {
 
 const styles = StyleSheet.create({
       container: {
-        flexDirection :'column',
-        width: Dimensions.get("window").width, 
-         height: Dimensions.get("window").height,  
+       backgroundColor:'white'
     },
     flex1:{
       flex:1

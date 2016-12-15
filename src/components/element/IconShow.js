@@ -46,7 +46,7 @@ export default class IconShow extends Component {
   
   render(){
       return(
-            <ScrollView >
+            <ScrollView style={{backgroundColor: 'white'}}>
                <Title {...titleParam} />
             
                 <ListView 

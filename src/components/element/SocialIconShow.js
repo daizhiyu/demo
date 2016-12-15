@@ -41,7 +41,7 @@ export default class SocialIconShow extends Component {
    }
   render(){
       return(
-            <ScrollView >
+            <ScrollView style={{backgroundColor: 'white'}}>
                <Title {...titleParam} />
              <View style={[styles.row]}>
                 <ListView 

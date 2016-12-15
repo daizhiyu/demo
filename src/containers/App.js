@@ -3,7 +3,8 @@
  */
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import Blog from './Index';
+
+import SliderBar from '../components/SliderBar';
 import configureStore from '../store/configureStore';
 
 const store = configureStore();
@@ -13,7 +14,7 @@ const store = configureStore();
     render (){
         return (
             <Provider store={store}>
-            <Blog />
+            <SliderBar />
             </Provider>
        )
     }

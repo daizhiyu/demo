@@ -46,7 +46,7 @@ const component3 = () => <Text>ButtonGroup</Text>
            
 
        return(
-           <View><Title {...titleParam} />
+           <View style={{backgroundColor: 'white'}}><Title {...titleParam} />
             <ButtonGroup
             containerStyle={{ width:Dimensions.get('window').width,height:30}}
             onPress={this.updateIndex}

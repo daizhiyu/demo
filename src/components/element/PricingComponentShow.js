@@ -28,7 +28,7 @@ export default class PricingComponentShow extends Component {
 
     render(){
        return(
-           <View><Title {...titleParam}/>
+           <View style={{backgroundColor: 'white'}}><Title {...titleParam}/>
            <PricingCard
   color='#4f9deb'
   title='Free'

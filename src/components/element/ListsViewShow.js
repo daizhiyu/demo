@@ -86,7 +86,7 @@ _pressFunction(rowData){
 
   render(){
       return(
-            <ScrollView >
+            <ScrollView style={{backgroundColor: 'white'}} >
               <Title {...titleParam} />
           <List containerStyle={{marginBottom: 20}}>
                 {
